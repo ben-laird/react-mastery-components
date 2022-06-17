@@ -1,6 +1,13 @@
 import * as React from "react";
 
-const CommentDetail = (props) => {
+interface CommentDetailProps {
+  author: string;
+  timeAgo: string;
+  avatarSrc: string;
+  content: string;
+}
+
+const CommentDetail = (props: CommentDetailProps) => {
   console.log(props);
   return (
     <div className="comment">
@@ -19,5 +26,7 @@ const CommentDetail = (props) => {
     </div>
   );
 };
+
+export type { CommentDetailProps };
 
 export default CommentDetail;

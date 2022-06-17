@@ -1,6 +1,13 @@
 import * as React from "react";
 
-const ApprovalCard = (props) => {
+interface ApprovalCardProps {
+  children:
+    | React.ReactElement<any, string | React.JSXElementConstructor<any>>
+    | React.ReactFragment
+    | React.ReactPortal;
+}
+
+const ApprovalCard = (props: ApprovalCardProps) => {
   return (
     <div className="ui card">
       <div className="content">{props.children}</div>
@@ -13,5 +20,7 @@ const ApprovalCard = (props) => {
     </div>
   );
 };
+
+export type { ApprovalCardProps };
 
 export default ApprovalCard;
