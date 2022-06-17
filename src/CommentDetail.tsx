@@ -8,7 +8,6 @@ interface CommentDetailProps {
 }
 
 const CommentDetail = (props: CommentDetailProps) => {
-  console.log(props);
   return (
     <div className="comment">
       <a href="/" className="avatar">
