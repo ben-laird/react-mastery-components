@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# Components
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is "chapter" 2 in my React mastery journey, focused on making components. Special thanks to Stephen Grider, from whose course I am learning React. See the course [here](https://www.udemy.com/share/101WcY3@ttelH1nM2n_aFyFKZUHlU9nbDts4nsfYHfm9mfvdWbsVMgOYOsy_Us16hVIUpcn1/). Midway through the course, I got very comfortable with React and JS, so much so that I started integrating new technologies and languages. I'm steadily going through my earlier projects and integrating them with the latest tech and the best practices, like TypeScript, Redux Toolkit, and React Final Form.  
+The last "chapter" is [here](https://github.com/ben-laird/my-first-react-app/) if you'd like to start from the beginning.
 
-## Available Scripts
+## Purpose
 
-In the project directory, you can run:
+The purpose of this react app is to introduce the concept of React components, a way to compartmentalize pieces of a React app, very similar to functions or classes from OOP. In fact, the components are written as functions, known as functional components. Rather on the nose, but it gets the job done.
 
-### `npm start`
+## Development Steps
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Step 1: Follow Tutorial
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The original, React-only app followed the tutorial to the letter, creating the same project structure and files. There is only one commit step mostly because there really only needed to be one commit step.
 
-### `npm test`
+### Step 2: Migrate to TypeScript
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+I started with
 
-### `npm run build`
+- [Adding types to React/ReactDOM and TS support](https://github.com/ben-laird/react-mastery-components/commit/538ca44a2537a04fbdd66acbdaeddca52defd2d1) then
+- [migrating my components to .tsx files](https://github.com/ben-laird/react-mastery-components/commit/75fa487e1a8ba546403ec45a1376b3863b50abb5).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I technically did both those steps at once, and the other way around; the method to this madness was that I wanted the experience of having the compiler yell at me for something instead of just following the tutorial. It's like a migratory version of test-driven-development. Call it compiler-tantrum-development. Migrating the React components to .tsx files *first* allows me to also not bloat my app with the `webpack.config.json` from the last project; I never included it this time because everything worked without it. I didn't know which builder I was using, so I just included it the first time. For context, I've been using [this guide](https://github.com/Microsoft/TypeScript-React-Conversion-Guide#typescript-react-conversion-guide) to convert my projects over.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Step 3: Add Types
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Lastly was the most important (and most fun) step in the migration process: adding types. Types are the main feature of TypeScript, and they add extra functionality to something that would otherwise be a standard JS file. The main implication is that now the compiler catches errors instead of the end user or your product. The type system can also function as built-in documentation; editors like VSCode (my personal favorite) hook into type definitions and provide autocomplete and hover information about your variables or other objects.
 
-### `npm run eject`
+## Create React App Readme
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This time around, I decided to rename the CRA readme and just include it as a link. If you'd like to read it, you can find it [here](CRA-README.md).
