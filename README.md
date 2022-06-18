@@ -24,8 +24,17 @@ I technically did both those steps at once, and the other way around; the method
 
 ### Step 3: Add Types
 
-Lastly was the most important (and most fun) step in the migration process: adding types. Types are the main feature of TypeScript, and they add extra functionality to something that would otherwise be a standard JS file. The main implication is that now the compiler catches errors instead of the end user or your product. The type system can also function as built-in documentation; editors like VSCode (my personal favorite) hook into type definitions and provide autocomplete and hover information about your variables or other objects.  
+Lastly was the most important (and most fun) step in the migration process: adding types. Types are the main feature of TypeScript, and they add extra functionality to something that would otherwise be a standard JS file. The main implication is that now the compiler catches errors instead of the end user or your product. The type system can also function as built-in documentation; editors like VSCode (my personal favorite) hook into type definitions and provide autocomplete and hover information about your variables or other objects.
+
 I added a `CommentDetailProps` type to the [`CommentDetail`](src/CommentDetail.tsx) component and an `ApprovalCardProps` type to, well, the [`ApprovalCard`](src/ApprovalCard.tsx) component. For the `CommentDetailProps` type, I looked at what props I was passing into the component and made a type for the `props` argument based on that. The component needed nothing more or less, so I made the types required and made sure not to allow any other arguments to be passed in. For the `ApprovalCard` component, I knew it needed to accept children as a prop and that I couldn't pass it anything else, like booleans or strings. I used a handy feature in VSCode that allows you to infer the type of a variable, parameter, etc by analyzing where it was declared and how it's used. After doing that, I pruned down some of the union types into something that only accepted child JSX components.
+
+### Step 4: Dockerize
+
+As an added bonus, this app is also fully dockerized! The command for starting the app in development mode can be found by looking in the [`package.json`](package.json) file, under the `scripts` heading. Instead of typing all that out, run
+
+#### `npm run docker-dev`
+
+instead.
 
 ## Create React App Readme
 
